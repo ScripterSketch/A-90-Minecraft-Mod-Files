@@ -1,0 +1,32 @@
+
+name: A-90 Source Bundle
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/build-a90.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository files
+        uses: actions/checkout@v4
+
+      - name: Bundle A-90 source files
+        uses: actions/upload-artifact@v4
+        with:
+          name: a90-source-files
+          path: |
+            A-90 (1.0.7) 2.zip
+            sounds.zip
+            ui.zip
+          if-no-files-found: error
+          retention-days: 7
