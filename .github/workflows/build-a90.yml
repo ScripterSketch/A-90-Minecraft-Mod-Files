@@ -28,5 +28,13 @@ jobs:
             A-90 (1.0.7) 2.zip
             sounds.zip
             ui.zip
+            IMG_1233.png
+            IMG_1234.png
+            IMG_1235.png
+            IMG_1236.png
+      
+            
+            
           if-no-files-found: error
           retention-days: 7
+          
